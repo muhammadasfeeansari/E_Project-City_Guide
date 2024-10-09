@@ -1,37 +1,83 @@
 {
-    "Cities": [
+  "Cities": [
+    {
+      "id": 1,
+      "name": "Karachi",
+      "desc": "Karachi is the capital city of the Pakistani province of Sindh. It is the largest city in Pakistan and the 12th largest in the world, with a population of over 20 million.",
+      "images": [
+        "https://media.istockphoto.com/id/1819401420/photo/mazar-e-quaid-jinnah-mausoleum-the-tomb-in-karachi-pakistan.jpg?s=612x612&w=0&k=20&c=4Urc23vRupElwZZkeUaX0uRcq8JtQtb0sUzbXNo9O40=",
+        "https://media.istockphoto.com/id/1127500841/photo/beautiful-view-of-bahadurabad-chorangi-karachi-pakistan.jpg?s=612x612&w=0&k=20&c=HzRA0Vbqa1zTSL88RNnUgebJZaZwDb6tZfmkXWwu89M=",
+        "https://media.istockphoto.com/id/1820894304/photo/frere-hall-hd-wallpaper-karachi-pakistan.jpg?s=612x612&w=0&k=20&c=b4SA20cNPInxIg_4egGhrIs6tA8YbgduUIL2jnO98TY="
+      ],
+      "attractions": [
         {
-            "id": 1,
-            "name": "Karachi",
-            "desc": "Karachi is the capital city of the Pakistani province of Sindh. It is the largest city in Pakistan and the 12th largest in the world, with a population of over 20 million.",
-            "images": [
-                "https://media.istockphoto.com/id/1819401420/photo/mazar-e-quaid-jinnah-mausoleum-the-tomb-in-karachi-pakistan.jpg?s=612x612&w=0&k=20&c=4Urc23vRupElwZZkeUaX0uRcq8JtQtb0sUzbXNo9O40=",
-                "https://media.istockphoto.com/id/1127500841/photo/beautiful-view-of-bahadurabad-chorangi-karachi-pakistan.jpg?s=612x612&w=0&k=20&c=HzRA0Vbqa1zTSL88RNnUgebJZaZwDb6tZfmkXWwu89M=",
-                "https://media.istockphoto.com/id/1820894304/photo/frere-hall-hd-wallpaper-karachi-pakistan.jpg?s=612x612&w=0&k=20&c=b4SA20cNPInxIg_4egGhrIs6tA8YbgduUIL2jnO98TY="
-            ]
-        },
-
-        {
-            "id": 2,
-            "name": "Islamabad",
-            "desc": "Islamabad is the capital city of the Islamic Republic of Pakistan.",
-            "images": [
-                "https://plus.unsplash.com/premium_photo-1697729760807-27c9c2e07a57?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aXNsYW1hYmFkfGVufDB8fDB8fHww",
-                "https://media.istockphoto.com/id/535695503/photo/pakistan-monument-islamabad.jpg?s=612x612&w=0&k=20&c=bNqjdf8L-5igcRB89DdMgx0kNOmyeo1J_zzXmoxxl8w=",
-                "https://media.istockphoto.com/id/509669336/photo/panoramic-view-of-islamabad-pakistan.jpg?s=612x612&w=0&k=20&c=J6teEngmeONOTRVCP9wAn4KYxg1d61whMIcqOWT3UTA="
-            ]
+          "name": "Mazar-e-Quaid",
+          "description": "Historical mausoleum...",
+          "imageUrl": "https://media.istockphoto.com/id/1453617912/photo/muhammad-ali-jinnah-mausoleum.jpg?s=612x612&w=0&k=20&c=a-MBPKTfyPgKUOGgLheYvYcs4xZOiQWMk4jvIG1L7Xc=",         
+          "openingHours": "9 AM - 5 PM",
+          "rating": 4.8
         },
         {
-            "id": 3,
-            "name": "Lahore",
-            "desc": "Lahore is the capital and largest city of the Pakistani province of Punjab. It is the second largest city in Pakistan, after Karachi, and 26th largest in the world, with a population of over 13 million.",
-            "images": [
-                "https://media.istockphoto.com/id/864193100/photo/the-emperors-mosque-badshahi-masjid-at-sunset.jpg?s=612x612&w=0&k=20&c=nq7aUZ_t9aksSEQyqpwzxpfveFLXWhaxu1AeZYgSPYM=",
-                "https://media.istockphoto.com/id/985506538/photo/minar-e-pakistan-monument-lahore-pakistan.jpg?s=612x612&w=0&k=20&c=oOZOCHEXibORnUjtshNjyG-TgRRdRgxQlOKyDViy9cE=",
-                "https://media.istockphoto.com/id/1441858346/photo/exterior-view-of-lahore-fort.jpg?s=612x612&w=0&k=20&c=ejvh7BzMK8BKh797SP4ii9AlYSqpk_TWfJIr_LcDVzw="
-            ]
+          "name": "Clifton Beach",
+          "description": "Famous beach in Karachi...",
+          "imageUrl": "https://media.istockphoto.com/id/1912095937/photo/various-beaches-of-north-goa.jpg?s=612x612&w=0&k=20&c=GF7qa5CKCLROjMm8KSaqz3PB7gKI1Z9LxJ7ps6XHdD0=",
+          "openingHours": "Open 24 hours",
+          "rating": 4.5
         }
-        
-    ]
-}
+      ]
+    },
 
+    {
+      "id": 2,
+      "name": "Islamabad",
+      "desc": "Islamabad is the capital city of the Islamic Republic of Pakistan.",
+      "images": [
+        "https://plus.unsplash.com/premium_photo-1697729760807-27c9c2e07a57?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aXNsYW1hYmFkfGVufDB8fDB8fHww",
+        "https://media.istockphoto.com/id/535695503/photo/pakistan-monument-islamabad.jpg?s=612x612&w=0&k=20&c=bNqjdf8L-5igcRB89DdMgx0kNOmyeo1J_zzXmoxxl8w=",
+        "https://media.istockphoto.com/id/509669336/photo/panoramic-view-of-islamabad-pakistan.jpg?s=612x612&w=0&k=20&c=J6teEngmeONOTRVCP9wAn4KYxg1d61whMIcqOWT3UTA="
+      ],
+      "attractions": [
+        {
+          "name": "Faisal Mosque",
+          "description": "Largest mosque in Pakistan...",
+          "imageUrl": "https://media.istockphoto.com/id/157617736/photo/faisal-mosque-in-pakistan-at-dusk.webp?a=1&b=1&s=612x612&w=0&k=20&c=sSWq6T_GbDJJIPSbjVzp58lwGEEqnJ79cdTp9e49vHM=",
+          "openingHours": "Open 24 hours",
+          "rating": 4.9
+        },
+        {
+            "name": "Daman-e-Koh",
+            "description": "Scenic viewpoint in the Margalla Hills offering a panoramic view of Islamabad.",
+            "imageUrl": "https://media.istockphoto.com/id/841180482/photo/road.jpg?s=612x612&w=0&k=20&c=wld5mZ3tH6ke17UVfKsiNEmxffIuO1ng5633A2tnjWI=",
+            "openingHours": "10 AM - 10 PM",
+            "rating": 4.7
+          }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Lahore",
+      "desc": "Lahore is the capital and largest city of the Pakistani province of Punjab. It is the second largest city in Pakistan, after Karachi, and 26th largest in the world, with a population of over 13 million.",
+      "images": [
+        "https://media.istockphoto.com/id/864193100/photo/the-emperors-mosque-badshahi-masjid-at-sunset.jpg?s=612x612&w=0&k=20&c=nq7aUZ_t9aksSEQyqpwzxpfveFLXWhaxu1AeZYgSPYM=",
+        "https://media.istockphoto.com/id/985506538/photo/minar-e-pakistan-monument-lahore-pakistan.jpg?s=612x612&w=0&k=20&c=oOZOCHEXibORnUjtshNjyG-TgRRdRgxQlOKyDViy9cE=",
+        "https://media.istockphoto.com/id/1441858346/photo/exterior-view-of-lahore-fort.jpg?s=612x612&w=0&k=20&c=ejvh7BzMK8BKh797SP4ii9AlYSqpk_TWfJIr_LcDVzw="
+      ],
+      "attractions": [
+        {
+          "name": "Badshahi Mosque",
+          "description": "One of the largest mosques in the world...",
+          "imageUrl": "https://media.istockphoto.com/id/172256688/photo/lahore-pakistan-sunrise-badshahi-mosque.jpg?s=612x612&w=0&k=20&c=LsIiVge8TQNj1adTw5MmaEKm9kYXO-zWWR9lsKwkCXg=",
+          "openingHours": "8 AM - 8 PM",
+          "rating": 4.8
+        },
+        {
+          "name": "Shalimar Gardens",
+          "description": "A Mughal-era garden complex, famous for its terraces, fountains, and landscaping.",
+          "imageUrl": "https://media.istockphoto.com/id/2153863369/photo/a-national-monument-in-lahore-pakistan.jpg?s=612x612&w=0&k=20&c=2HI-ZYAtLr-idltDG5lZHWJXIqw5GR4725wqlm-B9eU=",
+          "openingHours": "9 AM - 6 PM",
+          "rating": 4.6
+        }
+      ]
+    }
+  ]
+}

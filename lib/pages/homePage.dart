@@ -1,4 +1,6 @@
+import 'package:e_project/models/attractionModel.dart';
 import 'package:e_project/models/city_model.dart';
+import 'package:e_project/pages/attractionPage.dart';
 import 'package:e_project/services.dart/city_service.dart';
 import 'package:e_project/themes/mythme.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -190,7 +192,7 @@ class CityListView extends StatelessWidget {
       itemCount: cities.length,
       itemBuilder: (context, index) {
         final city = cities[index];
-        return CityCard(city: city); // Create a card for each city
+        return CityCard(city: city, attractions: const [],); // Create a card for each city
       },
     );
   }
@@ -199,7 +201,9 @@ class CityListView extends StatelessWidget {
 // City Card Widget
 class CityCard extends StatelessWidget {
   final City city;
-  const CityCard({required this.city, super.key});
+  final List<Attraction> attractions; // Pass attractions related to this city
+
+  const CityCard({required this.city, required this.attractions, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -210,74 +214,68 @@ class CityCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Display the first image of the city with a stylish effect
-          ClipRRect(
-            borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
-            child: Stack(
-              children: [
-                Image.network(
-                  city.images[0],
-                  height: 200,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
-                ),
-                // Gradient overlay to make the text more readable
-                Container(
-                  height: 200,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [Colors.black.withOpacity(0.6), Colors.transparent],
-                      begin: Alignment.bottomCenter,
-                      end: Alignment.topCenter,
-                    ),
-                  ),
-                ),
-              ],
+          // City image
+          if (city.images != null && city.images.isNotEmpty)
+            ClipRRect(
+              borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(12), topRight: Radius.circular(12)),
+              child: Image.network(
+                city.images[0],
+                width: double.infinity,
+                height: 180,
+                fit: BoxFit.cover,
+              ),
+            )
+          else
+            const SizedBox(
+              height: 180,
+              child: Center(child: Text('No image available')),
             ),
-          ),
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // City name with bold styling
+                // City name
                 Text(
                   city.name,
                   style: const TextStyle(
-                    fontSize: 26,
+                    fontSize: 22,
                     fontWeight: FontWeight.bold,
-                    color: Colors.redAccent,
-                    letterSpacing: 1.2, // Gives more professional spacing
+                    color: Colors.red,
                   ),
                 ),
-                const SizedBox(height: 6),
-                // City description with enhanced readability
+                const SizedBox(height: 8),
+                // City description
                 Text(
-                  city.desc,
+                  city.desc ?? 'No description available', // Use city description
                   style: const TextStyle(
                     fontSize: 16,
-                    color: Colors.black87,
-                    height: 1.5, // Better line height for clarity
+                    color: Colors.black,
                   ),
                 ),
                 const SizedBox(height: 12),
-                // Custom button with a red theme for "Explore" or any CTA
+                // Explore button
                 ElevatedButton(
-                  onPressed: () {
-                    // Action to explore the city details
+                  onPressed: ()async {
+                    List<Attraction> attractions = await getAttractionsForCity(city.name);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AttractionListPage(
+                          cityName: city.name,
+                          attractions: attractions, // Pass the relevant attractions
+                        ),
+                      ),
+                    );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.redAccent,
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 12,
-                      horizontal: 24,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
+                    backgroundColor: Colors.red,
+                    padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                   ),
                   child: const Text(
-                    'Details',
+                    'Explore',
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -293,4 +291,3 @@ class CityCard extends StatelessWidget {
     );
   }
 }
-
