@@ -13,7 +13,7 @@
         {
           "name": "Mazar-e-Quaid",
           "description": "Historical mausoleum...",
-          "imageUrl": "https://media.istockphoto.com/id/1453617912/photo/muhammad-ali-jinnah-mausoleum.jpg?s=612x612&w=0&k=20&c=a-MBPKTfyPgKUOGgLheYvYcs4xZOiQWMk4jvIG1L7Xc=",         
+          "imageUrl": "https://media.istockphoto.com/id/1453617912/photo/muhammad-ali-jinnah-mausoleum.jpg?s=612x612&w=0&k=20&c=a-MBPKTfyPgKUOGgLheYvYcs4xZOiQWMk4jvIG1L7Xc=",
           "openingHours": "9 AM - 5 PM",
           "rating": 4.8
         },
@@ -23,6 +23,38 @@
           "imageUrl": "https://media.istockphoto.com/id/1912095937/photo/various-beaches-of-north-goa.jpg?s=612x612&w=0&k=20&c=GF7qa5CKCLROjMm8KSaqz3PB7gKI1Z9LxJ7ps6XHdD0=",
           "openingHours": "Open 24 hours",
           "rating": 4.5
+        }
+      ],
+      "restaurants": [
+        {
+          "name": "Kolachi Restaurant",
+          "description": "Famous for its seaside location and BBQ...",
+          "imageUrl": "https://i.pinimg.com/736x/c8/16/f9/c816f9794e039162369b4856e13688ea.jpg",
+          "openingHours": "12 PM - 12 AM",
+          "rating": 4.5
+        },
+        {
+          "name": "Okra",
+          "description": "Fine dining restaurant in Karachi...",
+          "imageUrl": "https://lh3.googleusercontent.com/p/AF1QipPU5QWELaDdiXLxlB706HivsDhebHkEeEZRiNtT=s680-w680-h510",
+          "openingHours": "7 PM - 11 PM",
+          "rating": 4.6
+        }
+      ],
+      "events": [
+        {
+          "name": "Karachi Literature Festival",
+          "description": "Annual literary festival showcasing local and international authors...",
+          "imageUrl": "https://www.karachiliteraturefestival.com/wp-content/uploads/2023/12/KLF-SQUARE-RED-2024.jpg",
+          "eventDate": "March 1, 2024",
+          "rating": 4.8
+        },
+        {
+          "name": "Food Expo",
+          "description": "A major food expo featuring vendors from across the city...",
+          "imageUrl": "https://i.tribune.com.pk/media/images/Food-and-Agriculture-Exhibition-20241723413442-6/Food-and-Agriculture-Exhibition-20241723413442-6.jpg",
+          "eventDate": "July 15, 2024",
+          "rating": 4.7
         }
       ]
     },
@@ -45,12 +77,63 @@
           "rating": 4.9
         },
         {
-            "name": "Daman-e-Koh",
-            "description": "Scenic viewpoint in the Margalla Hills offering a panoramic view of Islamabad.",
-            "imageUrl": "https://media.istockphoto.com/id/841180482/photo/road.jpg?s=612x612&w=0&k=20&c=wld5mZ3tH6ke17UVfKsiNEmxffIuO1ng5633A2tnjWI=",
-            "openingHours": "10 AM - 10 PM",
-            "rating": 4.7
-          }
+          "name": "Daman-e-Koh",
+          "description": "Scenic viewpoint in the Margalla Hills offering a panoramic view of Islamabad.",
+          "imageUrl": "https://media.istockphoto.com/id/841180482/photo/road.jpg?s=612x612&w=0&k=20&c=wld5mZ3tH6ke17UVfKsiNEmxffIuO1ng5633A2tnjWI=",
+          "openingHours": "10 AM - 10 PM",
+          "rating": 4.7
+        }
+      ],
+      "hotels": [
+        {
+          "name": "Serena Hotel",
+          "description": "Luxury hotel with stunning views of the city...",
+          "imageUrl": "https://example.com/hotel-serena-islamabad.jpg",
+          "openingHours": "Check-in: 3 PM, Check-out: 12 PM",
+          "rating": 4.9
+        },
+        {
+          "name": "Islamabad Marriott Hotel",
+          "description": "Comfortable and modern hotel...",
+          "imageUrl": "https://example.com/hotel-marriott-islamabad.jpg",
+          "openingHours": "Check-in: 3 PM, Check-out: 12 PM",
+          "rating": 4.8,
+          "type": "hotel"
+        }
+      ],
+      "restaurants": [
+        {
+          "name": "Monal Restaurant",
+          "description": "Popular for its hilltop location and Pakistani cuisine...",
+          "imageUrl": "https://example.com/monal-restaurant.jpg",
+          "openingHours": "12 PM - 11 PM",
+          "rating": 4.7,
+          "type": "restuarant"
+        },
+        {
+          "name": "Rakaposhi Cafe",
+          "description": "Cafe located inside Serena Hotel, famous for its pastries...",
+          "imageUrl": "https://example.com/rakaposhi-cafe.jpg",
+          "openingHours": "8 AM - 10 PM",
+          "rating": 4.6
+        }
+      ],
+      "events": [
+        {
+          "name": "Islamabad Fashion Week",
+          "description": "Showcasing Pakistan's top fashion designers...",
+          "imageUrl": "https://example.com/fashion-week-islamabad.jpg",
+          "eventDate": "September 10, 2024",
+          "rating": 4.9
+        },
+        {
+          "name": "Art Festival",
+          "description": "Annual event featuring local and international artists...",
+          "imageUrl": "https://example.com/art-festival-islamabad.jpg",
+          "eventDate": "November 25, 2024",
+          "rating": 4.8,
+          "type": ""
+        }
       ]
     },
     {
@@ -76,6 +159,54 @@
           "imageUrl": "https://media.istockphoto.com/id/2153863369/photo/a-national-monument-in-lahore-pakistan.jpg?s=612x612&w=0&k=20&c=2HI-ZYAtLr-idltDG5lZHWJXIqw5GR4725wqlm-B9eU=",
           "openingHours": "9 AM - 6 PM",
           "rating": 4.6
+        }
+      ],
+      "hotels": [
+        {
+          "name": "Pearl Continental Hotel",
+          "description": "5-star luxury hotel with all modern amenities including swimming pool, spa, and fine dining.",
+          "imageUrl": "https://example.com/pc-lahore.jpg",
+          "openingHours": "Open 24 hours",
+          "rating": 4.7
+        },
+        {
+          "name": "Avari Hotel",
+          "description": "High-end hotel offering modern rooms and suites, plus fine dining and a rooftop pool.",
+          "imageUrl": "https://example.com/avari-lahore.jpg",
+          "openingHours": "Open 24 hours",
+          "rating": 4.6
+        }
+      ],
+      "restaurants": [
+        {
+          "name": "Café Aylanto",
+          "description": "Fine dining restaurant offering Mediterranean and Continental cuisine.",
+          "imageUrl": "https://example.com/cafe-aylanto.jpg",
+          "openingHours": "12 PM - 12 AM",
+          "rating": 4.5
+        },
+        {
+          "name": "Monal Lahore",
+          "description": "Renowned for its rooftop dining with scenic views of the city.",
+          "imageUrl": "https://example.com/monal-lahore.jpg",
+          "openingHours": "11 AM - 11 PM",
+          "rating": 4.6
+        }
+      ],
+      "events": [
+        {
+          "name": "Lahore Food Festival",
+          "description": "An annual food festival showcasing the best of local cuisine... ",
+          "imageUrl": "https://example.com/lahore-food-festival.jpg",
+          "eventDate": "February 14, 2024",
+          "rating": 4.9
+        },
+        {
+          "name": "Lahore Book Fair",
+          "description": "Annual book fair featuring authors and publishers from across Pakistan... ",
+          "imageUrl": "https://example.com/lahore-book-fair.jpg",
+          "eventDate": "April 10, 2024",
+          "rating": 4.8
         }
       ]
     }

@@ -37,16 +37,43 @@ class AttractionListPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ElevatedButton(
-                  onPressed: () {
-                    // Implement filtering logic here
-                  },
-                  child: const Text('Filter'),
+                  style: const ButtonStyle(
+                      backgroundColor: WidgetStatePropertyAll(Colors.red)),
+                  onPressed: () {},
+                  child: const Text(
+                    'Events',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
-                ElevatedButton(
-                  onPressed: () {
-                    // Implement sorting logic here
-                  },
-                  child: const Text('Sort'),
+                 ElevatedButton(
+                  style: const ButtonStyle(
+                      backgroundColor: WidgetStatePropertyAll(Colors.red)),
+                  onPressed: () {},
+                  child: const Text(
+                    'Hotels',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                 ElevatedButton(
+                  style: const ButtonStyle(
+                      backgroundColor: WidgetStatePropertyAll(Colors.red)),
+                  onPressed: () {},
+                  child: const Text(
+                    'Restuarants',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
               ],
             ),
