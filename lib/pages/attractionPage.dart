@@ -1,13 +1,45 @@
 import 'package:flutter/material.dart';
 import 'package:e_project/models/attractionModel.dart';
 
-class AttractionListPage extends StatelessWidget {
+class AttractionListPage extends StatefulWidget {
   final String cityName;
   final List<Attraction> attractions;
 
-  const AttractionListPage(
-      {required this.cityName, required this.attractions, Key? key})
-      : super(key: key);
+  const AttractionListPage({
+    required this.cityName,
+    required this.attractions,
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  _AttractionListPageState createState() => _AttractionListPageState();
+}
+
+class _AttractionListPageState extends State<AttractionListPage> {
+  String searchQuery = '';
+  List<Attraction> filteredAttractions = [];
+
+  @override
+  void initState() {
+    super.initState();
+    filteredAttractions = widget.attractions; // Initialize with all attractions
+  }
+
+  void filterAttractions(String query) {
+    if (query.isEmpty) {
+      setState(() {
+        filteredAttractions = widget.attractions; // Show all attractions
+      });
+    } else {
+      setState(() {
+        filteredAttractions = widget.attractions
+            .where((attraction) => attraction.name
+                .toLowerCase()
+                .contains(query.toLowerCase()))
+            .toList();
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +47,10 @@ class AttractionListPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Attractions in $cityName',
-            style: const TextStyle(color: Colors.white)),
+        title: Text(
+          'Attractions in ${widget.cityName}',
+          style: const TextStyle(color: Colors.white),
+        ),
         backgroundColor: Colors.red,
       ),
       body: Padding(
@@ -32,61 +66,43 @@ class AttractionListPage extends StatelessWidget {
             ),
             const SizedBox(height: 12),
 
-            // Filter and Sort Options
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                ElevatedButton(
-                  style: const ButtonStyle(
-                      backgroundColor: WidgetStatePropertyAll(Colors.red)),
-                  onPressed: () {},
-                  child: const Text(
-                    'Events',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+            // Search Box
+            TextField(
+              onChanged: (value) {
+                filterAttractions(value);
+              },
+              decoration: InputDecoration(
+                hintText: 'Search Hotels, Restuarants And Events Here ',
+                prefixIcon: const Icon(Icons.search),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(16),
+                  borderSide: const BorderSide(color: Colors.red),
                 ),
-                 ElevatedButton(
-                  style: const ButtonStyle(
-                      backgroundColor: WidgetStatePropertyAll(Colors.red)),
-                  onPressed: () {},
-                  child: const Text(
-                    'Hotels',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(16),
+                  borderSide: const BorderSide(color: Colors.red),
                 ),
-                 ElevatedButton(
-                  style: const ButtonStyle(
-                      backgroundColor: WidgetStatePropertyAll(Colors.red)),
-                  onPressed: () {},
-                  child: const Text(
-                    'Restuarants',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ],
+                contentPadding: const EdgeInsets.symmetric(vertical: 10),
+              ),
             ),
+            // const SizedBox(height: 12),
+
+            // // Best Hotels section
+            // const Text(
+            //   'Best Hotels',
+            //   style: TextStyle(
+            //       fontSize: 24, fontWeight: FontWeight.bold, color: Colors.red),
+            // ),
             const SizedBox(height: 12),
 
-            // Attractions list
+            // Hotels list
             Expanded(
               child: ListView.builder(
-                itemCount: attractions.length,
+                itemCount: filteredAttractions.length,
                 itemBuilder: (context, index) {
-                  final attraction = attractions[index];
+                  final attraction = filteredAttractions[index];
                   return Container(
-                    width: screenWidth, // Full width
+                    width: screenWidth,
                     margin: const EdgeInsets.symmetric(vertical: 8),
                     child: Card(
                       elevation: 6,
@@ -136,7 +152,7 @@ class AttractionListPage extends StatelessWidget {
                                           color: Colors.orange),
                                     ),
                                     Text(
-                                      'Open: ${attraction.openingHours}', // Assuming this is a property of Attraction
+                                      'Open: ${attraction.openingHours}',
                                       style: const TextStyle(
                                           color: Colors.black54),
                                     ),

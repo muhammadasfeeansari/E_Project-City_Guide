@@ -1,8 +1,5 @@
 import 'dart:convert';
 import 'package:e_project/models/city_model.dart';
-import 'package:e_project/models/eventModel.dart';
-import 'package:e_project/models/hotelModel.dart';
-import 'package:e_project/models/restaurantModel.dart';
 import 'package:flutter/services.dart' show rootBundle; // Ensure to import this to load the JSON
 // Import your City model
 import 'package:e_project/models/attractionModel.dart'; // Import your Attraction model
@@ -29,46 +26,3 @@ Future<List<Attraction>> getAttractionsForCity(String cityName) async {
   return []; 
 }
 //getHotelsForCity
-Future<List<Object>> getHotelsForCity(String cityName) async {
-  // Fetch the cities
-  List<City> cities = await fetchCities();
-
-  // Find the city and return its hotels
-  for (var city in cities) {
-    if (city.name == cityName) {
-      return city.hotels; // Return the list of hotels
-    }
-  }
-
-  return [];
-}
-//getRestaurantsForCity
-Future<List<Object>> getRestaurantsForCity(String cityName) async {
-  // Fetch the cities
-  List<City> cities = await fetchCities();
-
-  // Find the city and return its restaurants
-  for (var city in cities) {
-    if (city.name == cityName) {
-      return city.restaurants; // Return the list of restaurants
-    }
-  }
-
-  return [];
-}
-//getEventsForCity
-Future<List<Object>> getEventsForCity(String cityName) async {
-  // Fetch the cities
-  List<City> cities = await fetchCities();
-
-  // Find the city and return its events
-  for (var city in cities) {
-    if (city.name == cityName) {
-      return city.events; // Return the list of events
-    }
-  }
-
-  return [];
-}
-
-

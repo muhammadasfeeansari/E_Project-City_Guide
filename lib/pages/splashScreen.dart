@@ -82,7 +82,7 @@ class _SplashscreenPageState extends State<SplashscreenPage>
               children: [
                 // Splash logo or image with BoxFit to adjust its size
                 Image.asset(
-                  'assets/images/file.png', // Ensure the image path is correct
+                  'assets/images/travel.png', // Ensure the image path is correct
                   fit: BoxFit.cover, // Adjusts the image to fill the space
                   height: 200, // Set a fixed height if needed
                   width: 200,  // Set a fixed width if needed

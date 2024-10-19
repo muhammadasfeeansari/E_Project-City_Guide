@@ -152,26 +152,22 @@ class headerSection extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 16),
-          Container(
-            decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.4),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: TextField(
-              onChanged: onSearchChanged, // Call the function when text changes
-              decoration: InputDecoration(
-                icon: const Icon(
-                  Icons.search,
-                  color: Colors.redAccent,
-                ),
-                border: InputBorder.none,
-                hintText: 'Search cities...',
-                hintStyle: TextStyle(
-                  color: Colors.grey.shade800,
-                  fontSize: 16,
-                ),
+          TextField(
+            onChanged: (value) {
+              onSearchChanged(value);
+            },
+            decoration: InputDecoration(
+              hintText: 'Search Cities Where You Want To Go ',
+              prefixIcon: const Icon(Icons.search),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(16),
+                borderSide: const BorderSide(color: Colors.red),
               ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(16),
+                borderSide: const BorderSide(color: Colors.red),
+              ),
+              contentPadding: const EdgeInsets.symmetric(vertical: 10),
             ),
           ),
           const SizedBox(height: 20),
