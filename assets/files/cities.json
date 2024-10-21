@@ -15,35 +15,50 @@
           "description": "Historical mausoleum...",
           "imageUrl": "https://media.istockphoto.com/id/1453617912/photo/muhammad-ali-jinnah-mausoleum.jpg?s=612x612&w=0&k=20&c=a-MBPKTfyPgKUOGgLheYvYcs4xZOiQWMk4jvIG1L7Xc=",
           "openingHours": "9 AM - 5 PM",
-          "rating": 4.8
+          "rating": 4.8,
+          "websiteUrl" :"https://www.serenahotels.com/islamabad",
+          "latitude": 40.748817,
+          "longitude": -73.985428
         },
         {
           "name": "Clifton Beach",
           "description": "Famous beach in Karachi...",
           "imageUrl": "https://media.istockphoto.com/id/1912095937/photo/various-beaches-of-north-goa.jpg?s=612x612&w=0&k=20&c=GF7qa5CKCLROjMm8KSaqz3PB7gKI1Z9LxJ7ps6XHdD0=",
           "openingHours": "Open 24 hours",
-          "rating": 4.5
+          "rating": 4.5,
+          "websiteUrl" :"https://www.serenahotels.com/islamabad",
+          "latitude": 40.748817,
+          "longitude": -73.985428
         },
         {
           "name": "Marriot Hotel ",
           "description": "Famous Hotel in Karachi",
           "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUjuGSwoGku6A7LmLVOcZAEwD6BB9xyQkvGw&s",
           "openingHours": "Open 24 hours",
-          "rating": 4.7
+          "rating": 4.7,
+          "websiteUrl" :"https://www.marriott.com/en-us/hotels/khipk-karachi-marriott-hotel/overview/",
+          "latitude": 40.748817,
+          "longitude": -73.985428
         },
         {
           "name": "pearl continental Hotel",
           "description": "Famous beach in Karachi...",
           "imageUrl": "https://lh3.googleusercontent.com/p/AF1QipP_lmegf5X1buE6Blrl55xxOCvva3whMWCOzio=s680-w680-h510",
           "openingHours": "Open 24 hours",
-          "rating": 4.5
+          "rating": 4.5,
+          "websiteUrl" :"https://www.pchotels.com/pckarachi",
+          "latitude": 40.748817,
+          "longitude": -73.985428
         },
         {
           "name": "Okra Restaurant",
           "description": "The most exquisite restaurant in Karachi ",
           "imageUrl": "https://lh3.googleusercontent.com/p/AF1QipPU5QWELaDdiXLxlB706HivsDhebHkEeEZRiNtT=s680-w680-h510",
           "openingHours": "Open 24 hours",
-          "rating": 4.5
+          "rating": 4.5,
+          "websiteUrl" :"https://www.facebook.com/p/Okra-100064698610693/",
+          "latitude": 40.748817,
+          "longitude": -73.985428
         }
       ]
     },
@@ -62,35 +77,50 @@
           "description": "Largest mosque in Pakistan...",
           "imageUrl": "https://media.istockphoto.com/id/157617736/photo/faisal-mosque-in-pakistan-at-dusk.webp?a=1&b=1&s=612x612&w=0&k=20&c=sSWq6T_GbDJJIPSbjVzp58lwGEEqnJ79cdTp9e49vHM=",
           "openingHours": "Open 24 hours",
-          "rating": 4.9
+          "rating": 4.9,
+          "websiteUrl" :"https://www.serenahotels.com/islamabad",
+          "latitude": 40.748817,
+          "longitude": -73.985428
         },
         {
           "name": "Daman-e-Koh",
           "description": "Scenic viewpoint in the Margalla Hills offering a panoramic view of Islamabad.",
           "imageUrl": "https://media.istockphoto.com/id/841180482/photo/road.jpg?s=612x612&w=0&k=20&c=wld5mZ3tH6ke17UVfKsiNEmxffIuO1ng5633A2tnjWI=",
           "openingHours": "10 AM - 10 PM",
-          "rating": 4.7
+          "rating": 4.7,
+          "websiteUrl" :"https://www.serenahotels.com/islamabad",
+          "latitude": 40.748817,
+          "longitude": -73.985428
         },
         {
           "name": "Serena Hotel",
           "description": "Luxury hotel with stunning views of the city",
           "imageUrl": "https://lh5.googleusercontent.com/p/AF1QipOYaVb35jURKF8KuH61Jnz9bCxd9JuTgA3SpLb9=w243-h174-n-k-no-nu",
-          "openingHours": "Check-in: 3 PM, Check-out: 12 PM",
-          "rating": 4.9
+          "openingHours": "Open 24 hours",
+          "rating": 4.9,
+          "websiteUrl" :"https://www.serenahotels.com/islamabad",
+          "latitude": 40.748817,
+          "longitude": -73.985428
         },
         {
           "name": "  Ramada by Wyndham Hotel",
           "description": "Ramada is a large American multinational hotel chain owned by Wyndham Hotels & Resorts.",
-          "imageUrl": "https://lh3.googleusercontent.com/p/AF1QipOxpP0OmMrlBKpLUp70ekQFNGfkJMBZAupX65By=s680-w680-h510",
-          "openingHours": "Check-in: 3 PM, Check-out: 12 PM",
-          "rating": 4.9
+          "imageUrl": "https://media.licdn.com/dms/image/v2/C4D03AQF_w6lHShopFw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1591596213471?e=2147483647&v=beta&t=tVvBZ8CUGDboevnknuO_oDCq0XH6nSX3dux8l0DPnAk",
+          "openingHours": "Open 24 hours",
+          "rating": 4.9,
+          "websiteUrl" :"https://www.wyndhamhotels.com/ramada/islamabad-pakistan/ramada-islamabad/overview",
+          "latitude": 40.748817,
+          "longitude": -73.985428
         },
         {
           "name": "Savour Foods Islamabad Restuarant",
           "description": "EVERYTHING IS JUST DELICIOUS! What are you waiting for?",
           "imageUrl": "https://lh3.googleusercontent.com/p/AF1QipOg_G3_PzayqGycGX2f-VojlR4W7l_Xbx8xgbtL=s680-w680-h510",
           "openingHours": "Open 24 hours",
-          "rating": 4.5
+          "rating": 4.5,
+          "websiteUrl" :"https://www.savourfoods.com.pk/",
+          "latitude": 40.748817,
+          "longitude": -73.985428
         }
       ]
     },
@@ -109,14 +139,20 @@
           "description": "One of the largest mosques in the world...",
           "imageUrl": "https://media.istockphoto.com/id/172256688/photo/lahore-pakistan-sunrise-badshahi-mosque.jpg?s=612x612&w=0&k=20&c=LsIiVge8TQNj1adTw5MmaEKm9kYXO-zWWR9lsKwkCXg=",
           "openingHours": "8 AM - 8 PM",
-          "rating": 4.8
+          "rating": 4.8,
+          "websiteUrl" :"https://www.serenahotels.com/islamabad",
+          "latitude": 40.748817,
+          "longitude": -73.985428
         },
         {
           "name": "Lahore Fort",
           "description": "A UNESCO World Heritage Site...",
-          "imageUrl": "https://media.istockphoto.com/id/172256688/photo/lahore-pakistan-sunrise-badshahi-mosque.jpg?s=612x612&w=0&k=20&c=LsIiVge8TQNj1adTw5MmaEKm9kYXO-zWWR9lsKwkCXg=",
+          "imageUrl": "https://images.unsplash.com/photo-1629234932140-49db511736c5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGFob3JlJTIwZm9ydHxlbnwwfHwwfHx8MA%3D%3D",
           "openingHours": "9 AM - 7 PM",
-          "rating": 4.7
+          "rating": 4.7,
+          "websiteUrl" :"https://www.serenahotels.com/islamabad",
+          "latitude": 40.748817,
+          "longitude": -73.985428
         }
       ]
     }

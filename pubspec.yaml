@@ -40,6 +40,9 @@ dependencies:
   firebase_auth: ^5.3.0
   cloud_firestore: ^5.4.2
   font_awesome_flutter: ^10.7.0
+  url_launcher: ^6.3.1
+  flutter_map: ^7.0.2
+  latlong2: ^0.9.1
 
 dev_dependencies:
   flutter_test:

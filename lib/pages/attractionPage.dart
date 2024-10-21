@@ -1,3 +1,4 @@
+import 'package:e_project/pages/attractionDetailedPage.dart';
 import 'package:flutter/material.dart';
 import 'package:e_project/models/attractionModel.dart';
 
@@ -33,9 +34,8 @@ class _AttractionListPageState extends State<AttractionListPage> {
     } else {
       setState(() {
         filteredAttractions = widget.attractions
-            .where((attraction) => attraction.name
-                .toLowerCase()
-                .contains(query.toLowerCase()))
+            .where((attraction) =>
+                attraction.name.toLowerCase().contains(query.toLowerCase()))
             .toList();
       });
     }
@@ -101,67 +101,80 @@ class _AttractionListPageState extends State<AttractionListPage> {
                 itemCount: filteredAttractions.length,
                 itemBuilder: (context, index) {
                   final attraction = filteredAttractions[index];
-                  return Container(
-                    width: screenWidth,
-                    margin: const EdgeInsets.symmetric(vertical: 8),
-                    child: Card(
-                      elevation: 6,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16)),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          ClipRRect(
-                            borderRadius: const BorderRadius.vertical(
-                                top: Radius.circular(16)),
-                            child: Image.network(
-                              attraction.imageUrl,
-                              width: double.infinity,
-                              height: 160,
-                              fit: BoxFit.cover,
-                            ),
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => AttractionDetailPage(
+                            attraction: attraction,
                           ),
-                          Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  attraction.name,
-                                  style: const TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 18,
-                                      color: Colors.red),
-                                ),
-                                const SizedBox(height: 4),
-                                Text(
-                                  attraction.description,
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: const TextStyle(color: Colors.black54),
-                                ),
-                                const SizedBox(height: 8),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Rating: ${attraction.rating}',
-                                      style: const TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.orange),
-                                    ),
-                                    Text(
-                                      'Open: ${attraction.openingHours}',
-                                      style: const TextStyle(
-                                          color: Colors.black54),
-                                    ),
-                                  ],
-                                ),
-                              ],
+                        ),
+                      );
+                    },
+                    child: Container(
+                      width: screenWidth,
+                      margin: const EdgeInsets.symmetric(vertical: 8),
+                      child: Card(
+                        elevation: 6,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16)),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            ClipRRect(
+                              borderRadius: const BorderRadius.vertical(
+                                  top: Radius.circular(16)),
+                              child: Image.network(
+                                attraction.imageUrl,
+                                width: double.infinity,
+                                height: 160,
+                                fit: BoxFit.cover,
+                              ),
                             ),
-                          ),
-                        ],
+                            Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    attraction.name,
+                                    style: const TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18,
+                                        color: Colors.red),
+                                  ),
+                                  const SizedBox(height: 4),
+                                  Text(
+                                    attraction.description,
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                    style:
+                                        const TextStyle(color: Colors.black54),
+                                  ),
+                                  const SizedBox(height: 8),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        'Rating: ${attraction.rating}',
+                                        style: const TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.orange),
+                                      ),
+                                      Text(
+                                        'Open: ${attraction.openingHours}',
+                                        style: const TextStyle(
+                                            color: Colors.black54),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   );
