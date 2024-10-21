@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:e_project/models/attractionModel.dart'; // Adjust this path based on your structure
-import 'package:url_launcher/url_launcher.dart'; // For opening the website link
- // Import LatLng from latlong2 package
+import 'package:flutter_map/flutter_map.dart'; // Ensure this is imported
+import 'package:latlong2/latlong.dart'; // Import LatLng from the correct package
+import 'package:e_project/models/attractionModel.dart';
+import 'package:url_launcher/url_launcher.dart'; // Adjust this path based on your structure
 
 class AttractionDetailPage extends StatelessWidget {
   final Attraction attraction;
@@ -15,7 +16,8 @@ class AttractionDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(attraction.name, style:const TextStyle(color: Colors.white),),
+        title:
+            Text(attraction.name, style: const TextStyle(color: Colors.white)),
         backgroundColor: Colors.red,
       ),
       body: SingleChildScrollView(
@@ -74,6 +76,7 @@ class AttractionDetailPage extends StatelessWidget {
               ),
               const SizedBox(height: 16),
 
+              // Map Container
               // Map Placeholder (You can integrate Google Maps here)
               Container(
                 height: 200,
@@ -90,7 +93,7 @@ class AttractionDetailPage extends StatelessWidget {
               // User reviews (Placeholder)
               const Text(
                 'Reviews',
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: Colors.red,
@@ -111,10 +114,15 @@ class AttractionDetailPage extends StatelessWidget {
               // Link to Website
               ElevatedButton(
                 onPressed: () async {
-                  Uri url = Uri.parse(attraction.websiteUrl); // Parse the URL
+                  // Parse the URL from the attraction object
+                  Uri url = Uri.parse(attraction.websiteUrl);
+
+                  // Check if the URL can be launched
                   if (await canLaunchUrl(url)) {
+                    // Launch the URL in the user's default browser
                     await launchUrl(url);
                   } else {
+                    // Handle the case where the URL cannot be launched (optional)
                     throw 'Could not launch ${attraction.websiteUrl}';
                   }
                 },
@@ -124,7 +132,8 @@ class AttractionDetailPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(16),
                   ),
                 ),
-                child: const Text('Visit', style: TextStyle(color: Colors.white),),
+                child:
+                    const Text('Visit', style: TextStyle(color: Colors.white)),
               ),
             ],
           ),
