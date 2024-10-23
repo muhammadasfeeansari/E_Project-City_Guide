@@ -70,7 +70,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: mytheme.creamcolor,
+      backgroundColor: (context).theme.canvasColor,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -89,7 +89,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                         .extraBold
                         .size(25)
                         .xl5
-                        .color(Colors.red)
+                        .color(Colors.white)
                         .make(),
                   ),
 
@@ -115,7 +115,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                       hintText: "Enter Your Email",
                       filled: true,
                       prefixIcon: const Icon(Icons.email),
-                      fillColor: Colors.grey[200],
+                      fillColor: mytheme.blueishcolor,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
                         borderSide: BorderSide.none,
@@ -132,7 +132,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                       }
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.red,
+                      backgroundColor: mytheme.blueishcolor,
                       padding: const EdgeInsets.symmetric(
                         vertical: 16.0,
                         horizontal: 80.0,

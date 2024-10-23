@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: mytheme.lightTheme(context),
+      theme: mytheme.darktheme(context),
       initialRoute: "/splashscreen",
       routes: {
         MyRoutes.splashRoute: (context) => const SplashscreenPage(),

@@ -48,7 +48,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: mytheme.creamcolor,
+      backgroundColor: (context).theme.canvasColor,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -67,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
                         .extraBold
                         .size(25)
                         .xl5
-                        .color(Colors.red)
+                        .color(mytheme.creamcolor)
                         .make(),
                   ),
 
@@ -93,7 +93,7 @@ class _LoginPageState extends State<LoginPage> {
                       hintText: "Enter Your Email",
                       filled: true,
                       prefixIcon: const Icon(Icons.email),
-                      fillColor: Colors.grey[200],
+                      fillColor: mytheme.blueishcolor,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
                         borderSide: BorderSide.none,
@@ -129,7 +129,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                       filled: true,
-                      fillColor: Colors.grey[200],
+                      fillColor: mytheme.blueishcolor,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
                         borderSide: BorderSide.none,
@@ -155,7 +155,7 @@ class _LoginPageState extends State<LoginPage> {
                   ElevatedButton(
                     onPressed: loginUser,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.red,
+                      backgroundColor: mytheme.blueishcolor,
                       padding: const EdgeInsets.symmetric(
                         vertical: 16.0,
                         horizontal: 80.0,

@@ -1,12 +1,14 @@
 import 'package:e_project/models/attractionModel.dart';
 import 'package:e_project/models/city_model.dart';
 import 'package:e_project/pages/attractionPage.dart';
+import 'package:e_project/pages/drawerPage.dart';
+import 'package:e_project/pages/profilePage.dart';
 import 'package:e_project/services.dart/city_service.dart';
 import 'package:e_project/themes/mythme.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
- // Assuming your theme is defined here
+// Assuming your theme is defined here
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -41,8 +43,9 @@ class _HomepageState extends State<Homepage> {
         _filteredCities = _allCities; // Show all cities if query is empty
       } else {
         _filteredCities = _allCities
-            .where((city) =>
-                city.name.toLowerCase().contains(query.toLowerCase())) // Case-insensitive match
+            .where((city) => city.name
+                .toLowerCase()
+                .contains(query.toLowerCase())) // Case-insensitive match
             .toList();
       }
     });
@@ -51,12 +54,12 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: mytheme.creamcolor,
+      backgroundColor: (context.theme.canvasColor),
       appBar: AppBar(
-        backgroundColor: Colors.red,
+        backgroundColor: mytheme.blueishcolor,
         title: 'Explore Cities'
             .text
-            .color(mytheme.creamcolor)
+            .color(Colors.white)
             .fontFamily('')
             .size(25)
             .bold
@@ -64,69 +67,31 @@ class _HomepageState extends State<Homepage> {
         centerTitle: true,
         actions: [
           IconButton(
-            onPressed: () async {
-              bool? shouldLogout = await showDialog(
-                context: context,
-                builder: (context) {
-                  return AlertDialog(
-                    title: const Text('Sign Out'),
-                    content: const Text('Are you sure you want to sign out?'),
-                    actions: [
-                      TextButton(
-                        onPressed: () =>
-                            Navigator.of(context).pop(false), // Cancel action
-                        child: const Text('No'),
-                      ),
-                      TextButton(
-                        onPressed: () =>
-                            Navigator.of(context).pop(true), // Confirm action
-                        child: const Text('Yes'),
-                      ),
-                    ],
-                  );
-                },
-              );
-
-              if (shouldLogout ?? false) {
-                showDialog(
-                  context: context,
-                  barrierDismissible: false,
-                  builder: (context) {
-                    return const Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  },
-                );
-
-                try {
-                  await FirebaseAuth.instance.signOut();
-                  Navigator.pop(context); // Dismiss the loading indicator
-                  Navigator.pushReplacementNamed(context, '/login');
-                } catch (e) {
-                  Navigator.pop(context); // Dismiss on error
-                  print("Error signing out: $e");
-                }
-              }
-            },
-            icon: const Icon(
-              Icons.logout_outlined,
-              size: 30,
-              color: Colors.white,
-            ),
-          ),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ProfilePage(),
+                    ));
+              },
+              icon: const Icon(Icons.person)),
         ],
       ),
       body: Column(
         children: [
-          headerSection(onSearchChanged: _filterCities), // Pass the search function to header
+          headerSection(
+              onSearchChanged:
+                  _filterCities), // Pass the search function to header
           Expanded(
             child: _filteredCities.isNotEmpty
                 ? CityListView(cities: _filteredCities)
-                : const Center(child: Text('No city found')), // Show "No city found" if empty
+                : const Center(
+                    child:
+                        Text('No city found')), // Show "No city found" if empty
           ),
         ],
       ),
-      drawer: const Drawer(),
+      drawer: const Drawerpage(),
     );
   }
 }
@@ -148,7 +113,7 @@ class headerSection extends StatelessWidget {
             style: TextStyle(
               fontSize: 25,
               fontWeight: FontWeight.bold,
-              color: Colors.red,
+              color: Colors.white,
             ),
           ),
           const SizedBox(height: 16),
@@ -161,11 +126,11 @@ class headerSection extends StatelessWidget {
               prefixIcon: const Icon(Icons.search),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(16),
-                borderSide: const BorderSide(color: Colors.red),
+                borderSide: const BorderSide(color: Color(0xff403b58)),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(16),
-                borderSide: const BorderSide(color: Colors.red),
+                borderSide: const BorderSide(color: Color(0xff403b58)),
               ),
               contentPadding: const EdgeInsets.symmetric(vertical: 10),
             ),
@@ -188,7 +153,10 @@ class CityListView extends StatelessWidget {
       itemCount: cities.length,
       itemBuilder: (context, index) {
         final city = cities[index];
-        return CityCard(city: city, attractions: const [],); // Create a card for each city
+        return CityCard(
+          city: city,
+          attractions: const [],
+        ); // Create a card for each city
       },
     );
   }
@@ -199,11 +167,13 @@ class CityCard extends StatelessWidget {
   final City city;
   final List<Attraction> attractions; // Pass attractions related to this city
 
-  const CityCard({required this.city, required this.attractions, Key? key}) : super(key: key);
+  const CityCard({required this.city, required this.attractions, Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: mytheme.blueishcolor,
       margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
       elevation: 8,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -214,11 +184,14 @@ class CityCard extends StatelessWidget {
           if (city.images != null && city.images.isNotEmpty)
             ClipRRect(
               borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(12), topRight: Radius.circular(12)),
+                  topLeft: Radius.circular(12),
+                  topRight: Radius.circular(12),
+                  bottomLeft: Radius.circular(12),
+                  bottomRight: Radius.circular(12)),
               child: Image.network(
                 city.images[0],
                 width: double.infinity,
-                height: 180,
+                height: 200,
                 fit: BoxFit.cover,
               ),
             )
@@ -235,47 +208,55 @@ class CityCard extends StatelessWidget {
                 // City name
                 Text(
                   city.name,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
-                    color: Colors.red,
+                    color: (Theme.of(context).textTheme.displayLarge?.color ??
+                        mytheme.blueishcolor),
                   ),
                 ),
                 const SizedBox(height: 8),
                 // City description
                 Text(
-                  city.desc ?? 'No description available', // Use city description
-                  style: const TextStyle(
+                  city.desc ??
+                      'No description available', // Use city description
+                  style: TextStyle(
                     fontSize: 16,
-                    color: Colors.black,
+                    color: (Theme.of(context).textTheme.displayLarge?.color ??
+                        mytheme.blueishcolor),
                   ),
                 ),
                 const SizedBox(height: 12),
                 // Explore button
                 ElevatedButton(
-                  onPressed: ()async {
-                    List<Attraction> attractions = await getAttractionsForCity(city.name);
+                  onPressed: () async {
+                    List<Attraction> attractions =
+                        await getAttractionsForCity(city.name);
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => AttractionListPage(
                           cityName: city.name,
-                          attractions: attractions, // Pass the relevant attractions
+                          attractions:
+                              attractions, // Pass the relevant attractions
                         ),
                       ),
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red,
-                    padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                    backgroundColor: (context).theme.canvasColor,
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 15, horizontal: 30.0),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15.0)),
+                    elevation: 5,
                   ),
                   child: const Text(
                     'Explore',
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
-                      fontSize: 16,
+                      fontSize: 18,
                     ),
                   ),
                 ),
