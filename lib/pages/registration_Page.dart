@@ -103,7 +103,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: mytheme.creamcolor,
+      backgroundColor: (context).theme.canvasColor,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -122,7 +122,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                         .extraBold
                         .size(25)
                         .xl5
-                        .color(Colors.red)
+                        .color(mytheme.creamcolor)
                         .make(),
                   ),
 
@@ -145,7 +145,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       hintText: "Enter Your Name",
                       filled: true,
                       prefixIcon: const Icon(Icons.person),
-                      fillColor: Colors.grey[200],
+                      fillColor:mytheme.blueishcolor,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
                         borderSide: BorderSide.none,
@@ -167,7 +167,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       hintText: "Enter Your email",
                       filled: true,
                       prefixIcon: const Icon(Icons.email),
-                      fillColor: Colors.grey[200],
+                      fillColor: mytheme.blueishcolor,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
                         borderSide: BorderSide.none,
@@ -203,7 +203,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                         ),
                       ),
                       filled: true,
-                      fillColor: Colors.grey[200],
+                      fillColor: mytheme.blueishcolor,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
                         borderSide: BorderSide.none,
@@ -236,7 +236,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                         ),
                       ),
                       filled: true,
-                      fillColor: Colors.grey[200],
+                      fillColor: mytheme.blueishcolor,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
                         borderSide: BorderSide.none,
@@ -248,7 +248,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   ElevatedButton(
                     onPressed: registerUser,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.red,
+                      backgroundColor: mytheme.blueishcolor,
                       padding: const EdgeInsets.symmetric(
                         vertical: 16.0,
                         horizontal: 80.0,

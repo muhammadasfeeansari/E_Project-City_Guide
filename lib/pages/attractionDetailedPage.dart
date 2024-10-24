@@ -1,8 +1,10 @@
+import 'package:e_project/themes/mythme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart'; // Ensure this is imported
 import 'package:latlong2/latlong.dart'; // Import LatLng from the correct package
 import 'package:e_project/models/attractionModel.dart';
-import 'package:url_launcher/url_launcher.dart'; // Adjust this path based on your structure
+import 'package:url_launcher/url_launcher.dart';
+import 'package:velocity_x/velocity_x.dart'; // Adjust this path based on your structure
 
 class AttractionDetailPage extends StatelessWidget {
   final Attraction attraction;
@@ -15,10 +17,13 @@ class AttractionDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: (context).theme.canvasColor,
       appBar: AppBar(
-        title:
-            Text(attraction.name, style: const TextStyle(color: Colors.white)),
-        backgroundColor: Colors.red,
+        title: Text(attraction.name,
+            style: TextStyle(
+                color: (Theme.of(context).textTheme.displayLarge?.color ??
+                    mytheme.blueishcolor))),
+        backgroundColor: mytheme.blueishcolor,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -41,18 +46,20 @@ class AttractionDetailPage extends StatelessWidget {
               // Name and description
               Text(
                 attraction.name,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
-                  color: Colors.red,
+                  color: (Theme.of(context).textTheme.displayLarge?.color ??
+                      mytheme.blueishcolor),
                 ),
               ),
               const SizedBox(height: 8),
               Text(
                 attraction.description,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 16,
-                  color: Colors.black54,
+                  color: (Theme.of(context).textTheme.displayLarge?.color ??
+                      mytheme.blueishcolor),
                 ),
               ),
               const SizedBox(height: 16),
@@ -70,7 +77,10 @@ class AttractionDetailPage extends StatelessWidget {
                   ),
                   Text(
                     'Open: ${attraction.openingHours}',
-                    style: const TextStyle(color: Colors.black54),
+                    style: TextStyle(
+                        color:
+                            (Theme.of(context).textTheme.displayLarge?.color ??
+                                mytheme.blueishcolor)),
                   ),
                 ],
               ),
@@ -80,34 +90,57 @@ class AttractionDetailPage extends StatelessWidget {
               // Map Placeholder (You can integrate Google Maps here)
               Container(
                 height: 200,
-                color: Colors.grey[200],
-                child: const Center(
-                  child: Text(
-                    'Map Placeholder - Implement Google Maps here',
-                    style: TextStyle(color: Colors.black38),
-                  ),
+                color: mytheme.creamcolor,
+                child: Center(
+                  child: FlutterMap(
+                      options:  MapOptions(
+                        initialCenter: LatLng(attraction.latitude, attraction.longitude),
+                        initialZoom: 13,
+                        interactionOptions:const InteractionOptions(
+                            flags: ~InteractiveFlag.doubleTapZoom),
+                      ),
+                      children: [
+                        openStreetMapTileLayer,
+                         MarkerLayer(markers: [
+                          Marker(
+                              point: LatLng(attraction.latitude, attraction.longitude ),
+                              width: 80,
+                              height: 80,
+                              alignment: Alignment.centerLeft,
+                              child:const Icon(
+                                Icons.location_pin,
+                                size: 40,
+                                color: Colors.red,
+                              ))
+                        ])
+                      ]),
                 ),
               ),
               const SizedBox(height: 16),
 
               // User reviews (Placeholder)
-              const Text(
+              Text(
                 'Reviews',
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  color: Colors.red,
+                  color: (Theme.of(context).textTheme.displayLarge?.color ??
+                      mytheme.blueishcolor),
                 ),
               ),
               const SizedBox(height: 8),
               // Add a list of reviews or comments here (static for now)
-              const Text(
+              Text(
                 '• Great place to visit! - 5 Stars',
-                style: TextStyle(color: Colors.black54),
+                style: TextStyle(
+                    color: (Theme.of(context).textTheme.displayLarge?.color ??
+                        mytheme.blueishcolor)),
               ),
-              const Text(
+              Text(
                 '• Enjoyed the food. - 4 Stars',
-                style: TextStyle(color: Colors.black54),
+                style: TextStyle(
+                    color: (Theme.of(context).textTheme.displayLarge?.color ??
+                        mytheme.blueishcolor)),
               ),
               const SizedBox(height: 16),
 
@@ -127,13 +160,18 @@ class AttractionDetailPage extends StatelessWidget {
                   }
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.red,
+                  backgroundColor: mytheme.blueishcolor,
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 15, horizontal: 30.0),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(16),
                   ),
                 ),
-                child:
-                    const Text('Visit', style: TextStyle(color: Colors.white)),
+                child: Text('Visit Site',
+                    style: TextStyle(
+                        color:
+                            (Theme.of(context).textTheme.displayLarge?.color ??
+                                mytheme.blueishcolor))),
               ),
             ],
           ),
@@ -142,3 +180,8 @@ class AttractionDetailPage extends StatelessWidget {
     );
   }
 }
+
+TileLayer get openStreetMapTileLayer => TileLayer(
+      urlTemplate: 'http://tile.openstreetmap.org/{z}/{x}/{y}.png',
+      userAgentPackageName: 'dev.fleaflet.flutter_map.example',
+    );

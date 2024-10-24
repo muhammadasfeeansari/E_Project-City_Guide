@@ -44,7 +44,7 @@ class _ProfilePageState extends State<ProfilePage> {
         title: const Text("Profile"),
         actions: [
           IconButton(
-            icon: Icon(_isEditing ? Icons.save : Icons.edit),
+            icon: Icon(_isEditing ? Icons.save  : Icons.edit),
             onPressed: () {
               if (_isEditing) {
                 _saveProfile(user);

@@ -71,7 +71,7 @@ class _SplashscreenPageState extends State<SplashscreenPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: mytheme.creamcolor, // Background color
+      backgroundColor: (context).theme.canvasColor, // Background color
       body: Center(
         child: FadeTransition(
           opacity: _fadeAnimation,
@@ -81,12 +81,12 @@ class _SplashscreenPageState extends State<SplashscreenPage>
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 // Splash logo or image with BoxFit to adjust its size
-                Image.asset(
-                  'assets/images/travel.png', // Ensure the image path is correct
-                  fit: BoxFit.cover, // Adjusts the image to fill the space
-                  height: 200, // Set a fixed height if needed
-                  width: 200,  // Set a fixed width if needed
-                ),
+                // Image.asset(
+                //   'assets/images/travel.png', // Ensure the image path is correct
+                //   fit: BoxFit.cover, // Adjusts the image to fill the space
+                //   height: 200, // Set a fixed height if needed
+                //   width: 200,  // Set a fixed width if needed
+                // ),
                 const SizedBox(height: 5), // Space between logo and text
                 "City Guide"
                     .text
@@ -94,7 +94,7 @@ class _SplashscreenPageState extends State<SplashscreenPage>
                     .extraBold
                     .size(25)
                     .xl5
-                    .color(Colors.red)
+                    .color(mytheme.creamcolor)
                     .make(),
               ],
             ),

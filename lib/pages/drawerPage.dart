@@ -149,21 +149,21 @@ class Drawerpage extends StatelessWidget {
                   ),
 
                   // Email Tile
-                  ListTile(
-                    leading: Icon(Icons.app_registration_outlined,
-                        color: mytheme.creamcolor),
-                    title: Text(
-                      "Sign Up",
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: mytheme.creamcolor,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    onTap: () {
-                      // Handle email action
-                    },
-                  ),
+                  // ListTile(
+                  //   leading: Icon(Icons.app_registration_outlined,
+                  //       color: mytheme.creamcolor),
+                  //   title: Text(
+                  //     "Sign Up",
+                  //     style: TextStyle(
+                  //       fontSize: 18,
+                  //       color: mytheme.creamcolor,
+                  //       fontWeight: FontWeight.w500,
+                  //     ),
+                  //   ),
+                  //   onTap: () {
+                  //     // Handle email action
+                  //   },
+                  // ),
 
                   // Login Tile with InkWell for ripple effect
                   InkWell(

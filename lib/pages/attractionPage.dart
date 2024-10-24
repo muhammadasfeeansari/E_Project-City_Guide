@@ -1,6 +1,9 @@
 import 'package:e_project/pages/attractionDetailedPage.dart';
+import 'package:e_project/pages/homePage.dart';
+import 'package:e_project/themes/mythme.dart';
 import 'package:flutter/material.dart';
 import 'package:e_project/models/attractionModel.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class AttractionListPage extends StatefulWidget {
   final String cityName;
@@ -46,12 +49,13 @@ class _AttractionListPageState extends State<AttractionListPage> {
     final screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      backgroundColor: (context).theme.canvasColor,
       appBar: AppBar(
         title: Text(
           'Attractions in ${widget.cityName}',
           style: const TextStyle(color: Colors.white),
         ),
-        backgroundColor: Colors.red,
+        backgroundColor: mytheme.blueishcolor,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -62,7 +66,9 @@ class _AttractionListPageState extends State<AttractionListPage> {
             const Text(
               'Explore Attractions',
               style: TextStyle(
-                  fontSize: 24, fontWeight: FontWeight.bold, color: Colors.red),
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
             ),
             const SizedBox(height: 12),
 
@@ -76,11 +82,11 @@ class _AttractionListPageState extends State<AttractionListPage> {
                 prefixIcon: const Icon(Icons.search),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16),
-                  borderSide: const BorderSide(color: Colors.red),
+                  borderSide: const BorderSide(color: Color(0xff403b58)),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16),
-                  borderSide: const BorderSide(color: Colors.red),
+                  borderSide: const BorderSide(color: Vx.indigo500),
                 ),
                 contentPadding: const EdgeInsets.symmetric(vertical: 10),
               ),
@@ -116,6 +122,7 @@ class _AttractionListPageState extends State<AttractionListPage> {
                       width: screenWidth,
                       margin: const EdgeInsets.symmetric(vertical: 8),
                       child: Card(
+                        color: mytheme.blueishcolor,
                         elevation: 6,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(16)),
@@ -139,18 +146,26 @@ class _AttractionListPageState extends State<AttractionListPage> {
                                 children: [
                                   Text(
                                     attraction.name,
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 18,
-                                        color: Colors.red),
+                                        color: (Theme.of(context)
+                                                .textTheme
+                                                .displayLarge
+                                                ?.color ??
+                                            mytheme.blueishcolor)),
                                   ),
                                   const SizedBox(height: 4),
                                   Text(
                                     attraction.description,
                                     maxLines: 2,
                                     overflow: TextOverflow.ellipsis,
-                                    style:
-                                        const TextStyle(color: Colors.black54),
+                                    style: TextStyle(
+                                        color: (Theme.of(context)
+                                                .textTheme
+                                                .displayLarge
+                                                ?.color ??
+                                            mytheme.blueishcolor)),
                                   ),
                                   const SizedBox(height: 8),
                                   Row(
@@ -165,8 +180,12 @@ class _AttractionListPageState extends State<AttractionListPage> {
                                       ),
                                       Text(
                                         'Open: ${attraction.openingHours}',
-                                        style: const TextStyle(
-                                            color: Colors.black54),
+                                        style: TextStyle(
+                                            color: (Theme.of(context)
+                                                    .textTheme
+                                                    .displayLarge
+                                                    ?.color ??
+                                                mytheme.blueishcolor)),
                                       ),
                                     ],
                                   ),

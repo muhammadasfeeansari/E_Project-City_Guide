@@ -130,7 +130,7 @@ class headerSection extends StatelessWidget {
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(16),
-                borderSide: const BorderSide(color: Color(0xff403b58)),
+                borderSide: const BorderSide(color: Vx.indigo500),
               ),
               contentPadding: const EdgeInsets.symmetric(vertical: 10),
             ),
